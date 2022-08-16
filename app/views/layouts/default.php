@@ -9,8 +9,16 @@
     <title><?php echo $title; ?></title>
 </head>
 <body>
-    <?php echo $content; ?>
 
+    <?php include 'app/views/components/main_nav.php'?>
+
+    <div class="container my-5">
+        <div class="bg-light p-5 rounded">
+            <div class="col-sm-8 py-5 mx-auto">
+                <?php echo $content; ?>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
