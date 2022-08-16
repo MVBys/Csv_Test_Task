@@ -14,8 +14,6 @@ class Router
             $this->add($route, $params);
         }
 
-        print_r(trim($_SERVER['REQUEST_URI'], '/'));
-
     }
 
     protected function add($route, $params): void
@@ -43,20 +41,25 @@ class Router
     public function run()
     {
         if ($this->matchRoute()) {
-            $controller = 'application\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
+
+            $controller = 'app\controllers\\' . ucfirst($this->params['controller']) . 'Controller';
+
             if (class_exists($controller)) {
+
                 $action = $this->params['action'];
+
                 if (method_exists($controller, $action)) {
                     $controller = new $controller($this->params);
                     $controller->$action();
                 } else {
-                    echo '404';
+                    echo ' not matchRoute';
                 }
+
             } else {
-                echo '404';
+                echo ' not class_exists';
             }
         } else {
-            echo '404';
+            echo ' not method_exists';
         }
     }
 
