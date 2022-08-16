@@ -8,6 +8,7 @@ class MainController extends Controller
 
     public function index()
     {
-        echo 'controller index';
+        $this->view->render('main page', ["content"]);
     }
+
 }
