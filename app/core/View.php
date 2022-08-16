@@ -25,4 +25,13 @@ class View
             require 'app/views/layouts/' . $this->layout . '.php';
         }
     }
+
+    public static function error($code)
+    {
+        http_response_code($code);
+        $path = 'app/views/errors/' . $code . '.php';
+        if (file_exists($path)) {
+            require $path;
+        }
+    }
 }

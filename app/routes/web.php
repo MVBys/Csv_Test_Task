@@ -1,6 +1,10 @@
 <?php
 
 return [
+    '' => [
+        'controller' => 'main',
+        'action' => 'index',
+    ],
     'index' => [
         'controller' => 'main',
         'action' => 'index',

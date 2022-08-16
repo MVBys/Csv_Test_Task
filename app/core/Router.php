@@ -13,7 +13,6 @@ class Router
         foreach ($routes as $route => $params) {
             $this->add($route, $params);
         }
-
     }
 
     protected function add($route, $params): void
@@ -52,15 +51,13 @@ class Router
                     $controller = new $controller($this->params);
                     $controller->$action();
                 } else {
-                    echo ' not matchRoute';
+                    View::error(404);
                 }
-
             } else {
-                echo ' not class_exists';
+                View::error(404);
             }
         } else {
-            echo ' not method_exists';
+            View::error(404);
         }
     }
-
 }
