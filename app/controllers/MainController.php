@@ -1,7 +1,9 @@
 <?php
 namespace app\controllers;
 
-class MainController
+use app\core\Controller;
+
+class MainController extends Controller
 {
 
     public function index()
