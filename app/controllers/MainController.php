@@ -10,5 +10,5 @@ class MainController extends Controller
     {
         $this->view->render('main page', ["content"]);
     }
-
+    
 }
