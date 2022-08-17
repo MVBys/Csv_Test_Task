@@ -1,9 +1,21 @@
 <h1 class="display-5 fw-normal">Import data</h1>
 
+<?php if (isset($_SESSION['message'])) : ?>
+    <div class="alert alert-danger" role="alert">
+        <?php foreach ($_SESSION['message'] as $message) : ?>
+            <ul>
+                <li> <?php echo $message ?></li>
+            </ul>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
 
-<form>
+
+<form action="records/import" enctype="multipart/form-data" method="POST">
+
+    <input type="hidden" name="MAX_FILE_SIZE" value="1024" />
     <div class="col-12 mb-4">
-        <input class="form-control form-control-lg" id="formFileLg" type="file">
+        <input class="form-control form-control-lg" name="csv_file" type="file">
     </div>
 
 
