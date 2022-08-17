@@ -22,4 +22,9 @@ return [
         'action' => 'clearTable',
     ],
 
+    'records/import' => [
+        'controller' => 'records',
+        'action' => 'import',
+    ],
+
 ];
