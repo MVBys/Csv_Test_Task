@@ -27,7 +27,8 @@ class View
     }
     public function redirect($url)
     {
-        header('location:' . $url);
+        $prefix = 'http://' . $_SERVER['HTTP_HOST'];
+        header('location:' .  $prefix . $url);
         exit;
     }
 
