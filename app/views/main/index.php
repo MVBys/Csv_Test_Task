@@ -12,4 +12,4 @@
 </form>
 
 <hr class="my-4">
-<button class="w-100 btn btn-danger btn-lg" type="submit">Clear all records</button>
+<a href="/records/delete" class="w-100 btn btn-danger btn-lg" type="submit">Clear all records</a>

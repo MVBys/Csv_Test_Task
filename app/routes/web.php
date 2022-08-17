@@ -17,4 +17,9 @@ return [
         'controller' => 'records',
         'action' => 'export',
     ],
+    'records/delete' => [
+        'controller' => 'records',
+        'action' => 'clearTable',
+    ],
+
 ];

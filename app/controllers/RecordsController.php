@@ -24,4 +24,10 @@ class RecordsController extends Controller
 
         $this->view->redirect($file);
     }
+
+    public function clearTable()
+    {
+        (new Record)->clear();
+        $this->view->redirect('/records');
+    }
 }
