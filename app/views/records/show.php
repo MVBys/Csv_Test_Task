@@ -20,18 +20,20 @@
 
     <tbody>
 
-        <tr>
-            <?php foreach ($records as $record) : ?>
+
+        <?php foreach ($records as $record) : ?>
+            <tr>
                 <th scope="row"><?php echo $record['uid'] ?></th>
                 <td><?php echo $record['name'] ?></td>
                 <td><?php echo $record['age'] ?></td>
                 <td><?php echo $record['email'] ?></td>
                 <td><?php echo $record['phone'] ?></td>
                 <td><?php echo $record['gender'] ?></td>
-            <?php endforeach ?>
+            </tr>
+        <?php endforeach ?>
 
 
-        </tr>
+
 
     </tbody>
 
