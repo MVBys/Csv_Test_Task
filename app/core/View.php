@@ -24,11 +24,13 @@ class View
             $content = ob_get_clean();
             require 'app/views/layouts/' . $this->layout . '.php';
         }
+        unset($_SESSION['message']);
     }
-    public function redirect($url)
+    public function redirect($url, $message = [])
     {
-        $prefix = 'http://' . $_SERVER['HTTP_HOST'];
-        header('location:' .  $prefix . $url);
+        if ($message) $_SESSION['message'] = $message;
+        $url = 'http://' . $_SERVER['HTTP_HOST'] . $url;
+        header('location:' .  $url);
         exit;
     }
 
