@@ -25,6 +25,11 @@ class View
             require 'app/views/layouts/' . $this->layout . '.php';
         }
     }
+    public function redirect($url)
+    {
+        header('location:' . $url);
+        exit;
+    }
 
     public static function error($code)
     {
