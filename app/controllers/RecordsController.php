@@ -10,7 +10,7 @@ class RecordsController extends Controller
 
     public function show()
     {
-        $result = (new Record)->getRecords();
+        $result['records'] = (new Record)->getRecords();
         $this->view->render('Records page',  $result);
     }
 }

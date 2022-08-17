@@ -8,7 +8,7 @@ class Record extends Model
 {
     public function getRecords()
     {
-        $result = $this->db->query('SELECT uid, name, age, email, phone, gender description FROM records');
+        $result = $this->db->query('SELECT uid, name, age, email, phone, gender FROM records');
         return $result;
     }
 }
