@@ -1,4 +1,11 @@
 <h1 class="display-5 fw-normal">Records</h1>
+
+<?php if (empty($records)) : ?>
+    <div class="alert alert-danger" role="alert">
+        Records table is empty
+    </div>
+<?php endif ?>
+
 <table class="table">
     <thead>
         <tr>
@@ -32,4 +39,6 @@
 
 </table>
 
-<a href="/records/export" class="btn btn-primary" target="_blank">Export to CSV</a>
+<?php if (!empty($records)) : ?>
+    <a href="/records/export" class="btn btn-primary" target="_blank">Export to CSV</a>
+<?php endif ?>
