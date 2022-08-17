@@ -25,7 +25,7 @@ class Record extends Model
             $emailForQuery['emailForQuery'] .=   ($i !== count($emails) - 1) ?  '"' . $emails[$i] . '",' : '"' . $emails[$i] . '"';
         }
 
-        $result = $this->db->query("SELECT email FROM records WHERE email IN (:emailForQuery)", $emailForQuery);
+        $result = $this->db->query("SELECT email FROM records WHERE email IN ( " . $emailForQuery['emailForQuery'] . ")");
 
         return $result;
     }
