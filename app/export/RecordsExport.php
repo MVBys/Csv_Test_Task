@@ -22,7 +22,7 @@ class RecordsExport
         }
         fclose($fp);
 
-        $url = 'http://' . $_SERVER['HTTP_HOST'] . '/public/storage/export.csv';
+        $url =  '/public/storage/export.csv';
         return $url;
     }
 }
