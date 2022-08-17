@@ -29,4 +29,24 @@ class Record extends Model
 
         return $result;
     }
+
+    public function storeRecords($records)
+    {
+        $recordsForQuery['records'] = '';
+        $value = '';
+
+        foreach ($records as $item) {
+            $value = '';
+            for ($i = 0; $i < count($item); $i++) {
+                $value .=   ($i !== count($item) - 1) ?  '"' . $item[$i] . '",' : '"' . $item[$i] . '"';
+            }
+            $value = '(' . $value . ')';
+
+            $recordsForQuery['records'] .= $value . ',';
+        }
+        $recordsForQuery['records'] = rtrim($recordsForQuery['records'], ',');
+
+
+        $this->db->query("INSERT INTO records (name, age, email, phone, gender) VALUES " . $recordsForQuery['records']);
+    }
 }
