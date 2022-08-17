@@ -13,4 +13,8 @@ return [
         'controller' => 'records',
         'action' => 'show',
     ],
+    'records/export' => [
+        'controller' => 'records',
+        'action' => 'export',
+    ],
 ];

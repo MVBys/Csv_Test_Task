@@ -28,4 +28,8 @@
 
     </tbody>
 
+
+
 </table>
+
+<a href="/records/export" class="btn btn-primary" target="_blank">Export to CSV</a>
