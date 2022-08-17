@@ -17,4 +17,16 @@ class Record extends Model
         $this->db->query('DELETE FROM records WHERE uid>0');
         $this->db->query('ALTER TABLE records AUTO_INCREMENT = 0;');
     }
+
+    public function getEmailsInRecords($emails): array
+    {
+        $emailForQuery['emailForQuery'] = '';
+        for ($i = 1; $i < count($emails); $i++) {
+            $emailForQuery['emailForQuery'] .=   ($i !== count($emails) - 1) ?  '"' . $emails[$i] . '",' : '"' . $emails[$i] . '"';
+        }
+
+        $result = $this->db->query("SELECT email FROM records WHERE email IN (:emailForQuery)", $emailForQuery);
+
+        return $result;
+    }
 }
